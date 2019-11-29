@@ -40,6 +40,48 @@
         android:layout_marginTop="20dp"
         />
 
+    <Button
+        android:id="@+id/btnColorTexto"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="select color"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:id="@+id/txtTexto3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/averia_serif_libre_light"
+        android:gravity="center"
+        android:hint="Valor de transparencia"
+        android:textColor="@android:color/black" />
+
+    <CheckBox
+        android:id="@+id/cbEnable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Transparencia"
+        android:layout_marginTop="10dp"/>
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:min="0"
+        android:max="100" />
+
 
 
     <LinearLayout
