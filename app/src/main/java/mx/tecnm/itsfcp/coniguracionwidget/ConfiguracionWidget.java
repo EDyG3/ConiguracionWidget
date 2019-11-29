@@ -82,7 +82,7 @@ public class ConfiguracionWidget extends AppCompatActivity {
         btnAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                
+
                 //Actualizamos el widget tras la configuración
                 AppWidgetManager appWidgetManager =
                         AppWidgetManager.getInstance(ConfiguracionWidget.this);

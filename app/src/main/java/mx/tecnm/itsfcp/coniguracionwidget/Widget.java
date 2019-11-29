@@ -50,6 +50,8 @@ public class Widget extends AppWidgetProvider {
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         // There may be multiple widgets active, so update all of them
+
+        //ACTUALIZAR WIDGET
         final int N = appWidgetIds.length;
 
         for (int i = 0; i < N; i++) {
