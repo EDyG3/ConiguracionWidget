@@ -25,6 +25,7 @@ public class ConfiguracionWidget extends AppCompatActivity {
     public Button btnColor;
     public Button btnColorTexto;
     public CheckBox cbEnable;
+
     TextView tV;
     TextView tV2;
     SeekBar sB;
@@ -34,7 +35,7 @@ public class ConfiguracionWidget extends AppCompatActivity {
     public static int formulaTransparencia;
     public static String transparencia = "ff";
     public static int colorActual;
-    public static String colorhex = "ffffff";
+    public static String colorhex = "0a0b0b";
     public static int colorActualTexto = 999999999;
     public static String colorCompleto = "ffffff";
     LinearLayout fondo;
@@ -81,6 +82,7 @@ public class ConfiguracionWidget extends AppCompatActivity {
         btnAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
+                
                 //Actualizamos el widget tras la configuración
                 AppWidgetManager appWidgetManager =
                         AppWidgetManager.getInstance(ConfiguracionWidget.this);

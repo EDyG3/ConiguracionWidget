@@ -31,6 +31,11 @@ public class Widget extends AppWidgetProvider {
         PendingIntent pendingIntent = PendingIntent.getActivity(context,appWidgetId,intent,PendingIntent.FLAG_UPDATE_CURRENT);
         views.setOnClickPendingIntent(R.id.fondow,pendingIntent);
 
+        //ABRIR ACTIVIDAD
+        Intent intent2 = new Intent(context, Configuracion2.class);
+        PendingIntent pendingIntent2 = PendingIntent.getActivity(context,appWidgetId,intent2,PendingIntent.FLAG_UPDATE_CURRENT);
+        views.setOnClickPendingIntent(R.id.btnPersonalizacion,pendingIntent2);
+
 
 
 
@@ -45,15 +50,28 @@ public class Widget extends AppWidgetProvider {
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         // There may be multiple widgets active, so update all of them
+        final int N = appWidgetIds.length;
+
+        for (int i = 0; i < N; i++) {
+            int appWidgetId = appWidgetIds[i];
+
+            Intent intent = new Intent(context, Configuracion2.class);
+            PendingIntent pendingIntent = PendingIntent.getActivity(context,0, intent, 0);
+            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
+            views.setOnClickPendingIntent(R.id.btnPersonalizacion, pendingIntent);
+
+
+                views.setTextViewTextSize(R.id.LblMensaje, TypedValue.COMPLEX_UNIT_SP, Configuracion2.seekValue);
+                views.setInt(R.id.fondow, "setBackgroundColor", Color.parseColor("#"+Configuracion2.transparencia+Configuracion2.colorhex));
+                views.setTextColor(R.id.LblMensaje, Configuracion2.colorActualTexto);
+                views.setTextViewText(R.id.LblMensaje,Configuracion2.transparencia);
 
 
 
-
-        for (int appWidgetId : appWidgetIds) {
-
-            updateAppWidget(context, appWidgetManager, appWidgetId);
-
+            appWidgetManager.updateAppWidget(appWidgetId, views);
         }
+
+
     }
 
     @Override
